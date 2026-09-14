@@ -7,7 +7,7 @@ VERSION      := $(shell date -u +"%Y.%m.%d")
 COMMIT_HASH  := $(shell git rev-parse HEAD 2>/dev/null || echo unknown)
 GO_VER       := $(shell go version | sed 's/go//g' | cut -d ' ' -f 3)
 
-FIPS_ENV     := GOFIPS=1 GOFIPS140=v1.26.0
+FIPS_ENV     := GOFIPS=1 GOFIPS140=certified
 GO_LINUX     := GOOS=linux GOARCH=amd64
 GO_ARM       := GOOS=linux GOARCH=arm64
 
@@ -17,7 +17,7 @@ LDFLAGS := -s -w \
 	-X "main.version=$(VERSION)" \
 	-X "main.goVer=$(GO_VER)"
 
-GOLANGCI_VERSION := v2.12.2
+GOLANGCI_VERSION := v2.13.2
 NFPM_VERSION     := v2.47.0
 
 .DEFAULT_GOAL := build

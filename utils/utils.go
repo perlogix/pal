@@ -32,7 +32,6 @@ import (
 	"crypto/tls"
 
 	"github.com/marshyski/pal/data"
-	"golang.org/x/net/http2"
 )
 
 const (
@@ -273,7 +272,7 @@ func CheckURL(url string, insecure bool) bool {
 		InsecureSkipVerify: insecure,
 	}
 
-	transport := &http2.Transport{
+	transport := &http.Transport{
 		TLSClientConfig: tlsConfig,
 	}
 

@@ -51,7 +51,6 @@ import (
 	"github.com/marshyski/pal/db"
 	"github.com/marshyski/pal/ui"
 	"github.com/marshyski/pal/utils"
-	"golang.org/x/net/http2"
 	"gopkg.in/yaml.v3"
 )
 
@@ -2007,7 +2006,7 @@ func sendWebhookNotifications(actionData data.ActionData, output, input string) 
 					req.Header.Set(h.Header, h.Value)
 				}
 
-				transport := &http2.Transport{
+				transport := &http.Transport{
 					TLSClientConfig: &tls.Config{
 						InsecureSkipVerify: webhook.Insecure,
 						MinVersion:         tls.VersionTLS13,

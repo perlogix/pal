@@ -404,10 +404,9 @@ Documentation:	https://github.com/marshyski/pal
 	transport.MaxConnsPerHost = 200
 
 	tlsCfg := &tls.Config{
-		MinVersion:               tls.VersionTLS12,
-		CurvePreferences:         getTLScurves(),
-		PreferServerCipherSuites: true,
-		CipherSuites:             getCiphers(),
+		MinVersion:       tls.VersionTLS12,
+		CurvePreferences: getTLScurves(),
+		CipherSuites:     getCiphers(),
 	}
 
 	tcpVer := "tcp4"

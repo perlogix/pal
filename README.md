@@ -390,7 +390,7 @@ Examples:
 	Get HTTP server health status
   pal -c ./pal.yml -s
 
-Go Version:     1.26.0
+Go Version:     1.27.0
 Commit Hash:	288c07a29f4dbbc540227494d7f0b4f2a3f1acbe
 FIPS 140-3:     Enabled
 Built On:       Wed Mar  4 03:18:16 UTC 2026
